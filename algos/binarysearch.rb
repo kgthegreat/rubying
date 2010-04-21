@@ -23,23 +23,23 @@ end
 
 def binary_search(sorted_array, number_to_be_searched)
   size = sorted_array.size
-  puts
+  if number_to_be_searched < sorted_array[0] || number_to_be_searched > sorted_array[size-1]
+    puts "Number not found"
+    return
+  end
   middle_index = size/2
-  puts
   middle_element = sorted_array[middle_index]
-  puts
+  needle = middle_index
   if middle_element === number_to_be_searched
-    middle_index = middle_index/2
-    puts "the position of the sought number is #{size}"
+    puts "the position of the sought number is #{middle_index/2}"
     return
   elsif middle_element > number_to_be_searched
     sorted_array = sorted_array.slice(0,middle_index)
   elsif middle_element < number_to_be_searched
     sorted_array = sorted_array.slice(middle_index,size)
+    needle=+middle_index
   end
-  if(sorted_array.size > 0)
-    binary_search(sorted_array, number_to_be_searched)
-  end
+  binary_search(sorted_array, number_to_be_searched)
 end
 
 
