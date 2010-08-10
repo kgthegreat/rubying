@@ -32,6 +32,11 @@ class Player
     @vel_y *= 0.95
   end
 
+  def collect_stars(stars)
+    stars.reject! do |star|
+      Gosu::distance(@x , @y , star.x, star.y ) < 35
+    end
+  end
   def draw
     @image.draw_rot(@x,@y,1,@angle)
   end

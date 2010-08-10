@@ -10,6 +10,7 @@ class GameWindow < Gosu::Window
 
     @player = Player.new(self)
     @player.warp(320, 240)
+ #   @star_anime = Gosu::Image::load_tiles(self, "media/Star.png", 25,25,)
   end
 
   def update
