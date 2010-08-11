@@ -17,7 +17,7 @@ def fetch_list_of_names
       personlist << Person.new(data.split(' '))
     end
   end
-  return personlist.sort_by { rand }
+  return personlist # .sort_by { rand }
 end
 
 def show_names(personlist)
@@ -27,6 +27,23 @@ def show_names(personlist)
   end
 end
 
+def assign_santa(person_list)
+ # santa_person_map = Hash.new
+  santa_benefitter_map = []
+  leftovers_map = []
+  benefitter_list = person_list.sort_by { rand }
+  iterator = person_list.size
+  person_list.size.times {|x|
+    santa_benefitter_pair = []
+    person_list[x-1] = santa
+    benefitter_list[x-1] = benefitter
+    if(!santa.equals(benefitter)&& (santa.lastname != benefitter.lastname))
+      santa_benefitter_pair << person_list[x-1]
+      santa_benefitter_pair << random_person_list[x-1]
+      santa_benefitter_map << santa_person_pair
+    end
+  }
+end
 def randomize_array(array)
 
 end
