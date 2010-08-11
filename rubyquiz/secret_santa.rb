@@ -3,6 +3,13 @@ class Person
   def initialize(person)
     @firstname,@lastname,@email = person[0],person[1],person[2]
   end
+  def ==(person)
+    if person.is_a? Person
+      @firstname == person.firstname && @lastname == person.lastname && @email == person.email
+    else
+      false
+    end
+  end
 end
 
 def fetch_list_of_names
@@ -30,6 +37,7 @@ end
 def assign_santa(person_list)
  # santa_person_map = Hash.new
   santa_benefitter_map = []
+  leftovers_list = []
   leftovers_map = []
   benefitter_list = person_list.sort_by { rand }
   iterator = person_list.size
@@ -37,10 +45,12 @@ def assign_santa(person_list)
     santa_benefitter_pair = []
     person_list[x-1] = santa
     benefitter_list[x-1] = benefitter
-    if(!santa.equals(benefitter)&& (santa.lastname != benefitter.lastname))
+    if(santa.lastname != benefitter.lastname)
       santa_benefitter_pair << person_list[x-1]
       santa_benefitter_pair << random_person_list[x-1]
       santa_benefitter_map << santa_person_pair
+    else
+      leftovers
     end
   }
 end
