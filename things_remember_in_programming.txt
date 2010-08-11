@@ -1,0 +1,6 @@
+1. #ruby gets.chomp will get the data from STDIN. The next gets.chomp will get the next data.
+   refer rubyquiz/secret_santa.rb
+
+2. #emacs C-M % is for find and replace in a single file. Use y to indicate a replace
+
+3. #ruby randomize an array in ruby : array.sort_by {rand}
