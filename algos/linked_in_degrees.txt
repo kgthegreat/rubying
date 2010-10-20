@@ -1,0 +1,29 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                           1st                  2nd                  3rd
+
+                                                                   subject's friend       subject's foaf
+
+                                                  subject--------------------A--------------------B-----------------person
+
+                                                                      person's foaf        person's friend
+
+                                                    3rd                    2nd                  1st
+
+
+
+                                                    foaf = friend of a friend
